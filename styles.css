@@ -1,90 +1,70 @@
-@import url();
-
-.calculator{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 0;
-    height: 600px;
-    max-width: 300px;
-    margin: auto;
-    padding: 10px;
-    color: #ffffff;
-    background-color: #000000;
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    width: 400px;
     border-radius: 30px;
-    padding-bottom: 60px;
+    margin: auto;
+    background-color: black;
+    padding: 10px;
+    padding-bottom: 50px;
+    font-family: FiraCode Nerd Font, sans-serif;
 }
 
 .display {
-    grid-column: 1 / span 4;
-    grid-row: 1 / span 3;
-    color: #ffffff;
-    background-color: #000000;
-    padding: 20px;
-    text-align: right;
-    font-size: 64px;
-    margin-bottom: 20px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    flex: 5;
+    color: white;
     justify-content: flex-end;
-    font-family: 'Inter';
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    align-items: flex-end;
+
+}
+
+.top-display {
+    font-size: 60px;
+}
+
+.bottom-display {
+    font-size: 40px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    flex: 10;
+
 }
 
 .button {
-    width: 85%;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
     display: flex;
     justify-self: center;
     align-self: center;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    font-family: 'Inter';
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.wide {
-    grid-column: span 2;
+    aspect-ratio: 1;
     width: 90%;
-    border-radius: 9999px;
-    aspect-ratio: 2.25;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 15%;
-    align-items: center;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    padding-block: 0;
+    padding-inline: 0;
+    font-size: 40px;
+    font-family: inherit;
 }
 
-.function {
-    background-color: #fc9600;
-    color: #ffffff;
-}
-
-.number {
-    background-color: #343434;
-    color: #ffffff;
-}
-
-.special {
+.grey {
+    color: black;
     background-color: #a8a8a8;
-    color: #000000;
 }
 
-.blinking-cursor::after {
-    content: '|';
-    color: #ffffff;
-    animation: blink 1s step-end infinite;
+.orange {
+    color: white;
+    background-color: #fc9600;
 }
 
-@keyframes blink {
-    0%, 100% {opacity: 0; }
-    50% {opacity: 1; }
+.slate {
+    color: white;
+    background-color: #343434;
 }
