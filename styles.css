@@ -68,3 +68,14 @@
     color: white;
     background-color: #343434;
 }
+
+.blinking-cursor::after {
+    content: '|';
+    color: #ffffff;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 0; }
+    50% {opacity: 1; }
+}
