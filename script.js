@@ -94,7 +94,12 @@ function evaluateExpression() {
     try {
         let processedExpression = currentExpression
         .replace(/(\d+|\))\(/g, '$1*(')
-        .replace(/\)(\d+)/g, ')*$1');
+        .replace(/\)(\d+)/g, ')*$1')
+        .replace(/--/g, '+');
+
+        const openParenCount = (processedExpression.match(/\(/g) || []).length;
+        const closeParenCount = (processedExpression.match(/\)/g) || []).length;
+        processedExpression += ')'.repeat(openParenCount - closeParenCount);
 
         resultExpression = eval(processedExpression);
     } catch {
