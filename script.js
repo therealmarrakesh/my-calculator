@@ -83,8 +83,9 @@ function handleSpecialButton(id) {
             break;
         case 'evaluate':
             try {
+                const maxDigits = 10;
                 evaluateExpression();
-                currentExpression = resultExpression.toString();
+                currentExpression = resultExpression.toString().slice(0, maxDigits);
                 resultExpression = '';
                 break;
             } catch {
