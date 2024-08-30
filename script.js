@@ -17,7 +17,8 @@ function updateDisplay() {
 
     let displayExpression = currentExpression
     .replace(/\*/g, '×')
-    .replace(/\//g, '÷');
+    .replace(/\//g, '÷')
+    .replace(/\-/g, '−');
 
     currentDisplay.textContent = displayExpression;
     const maxDigits = 10;
