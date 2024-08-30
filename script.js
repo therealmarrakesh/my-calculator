@@ -43,7 +43,7 @@ function validateInput(currentExpression, newInput) {
         /(\d*\.\d*){2,}/, // Prevent multiple decimals in a number
         /\.[+*/-]/, // Prevent operator after a decimal
         /\([+*/]/, // Prevent invalid operators after opening parenthesis
-        /[+\-*/%]%/, //Prevent invalid operators before percentages
+        /[(+\-*/%]%/, //Prevent invalid operators before percentages
 
     ];
 
