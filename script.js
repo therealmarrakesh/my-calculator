@@ -44,7 +44,7 @@ function validateInput(currentExpression, newInput) {
         /\.[+*/-]/, // Prevent operator after a decimal
         /\([+*/]/, // Prevent invalid operators after opening parenthesis
         /[(+\-*/%]%/, //Prevent invalid operators before percentages
-
+        /(^|[+\-*/%])(0{2,})/ // Prevent two leading '0' or two '0' after operator
     ];
 
     for (let pattern of invalidPatterns) {
