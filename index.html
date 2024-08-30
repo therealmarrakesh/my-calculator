@@ -5,34 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>my-calculator</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&text=0123456789%E2%8C%AB%E2%88%92()%2B%C3%97%C3%B7%3D%25&subset=latin,latin-ext&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="calculator">
             <div class="display">
-                <div class="top-display">Test</div>
-                <div class="bottom-display">Test</div>
+                <div class="inner-display">
+                    <div id="currentDisplay" class="current-display"></div>
+                    <div id="resultDisplay" class="result-display"></div>
+                </div>
             </div>
             <div class="buttons">
-                <button class="grey button" id="clear">AC</button>
-                <button class="grey button" id="parenthesis">()</button>
-                <button class="grey button" id="percentage">%</button>
-                <button class="orange button" id="divide">÷</button>
+                <button class="grey special button" id="clear">AC</button>
+                <button class="grey parenthesis button" id="parenthesis">( )</button>
+                <button class="grey operator button" id="%">%</button>
+                <button class="orange operator button" id="/">÷</button>
                 <button class="slate button" id="7">7</button>
                 <button class="slate button" id="8">8</button>
                 <button class="slate button" id="9">9</button>
-                <button class="orange button" id="multiply">×</button>
+                <button class="orange operator button" id="*">×</button>
                 <button class="slate button" id="4">4</button>
                 <button class="slate button" id="5">5</button>
                 <button class="slate button" id="6">6</button>
-                <button class="orange button" id="subtract">−</button>
+                <button class="orange operator button" id="-">−</button>
                 <button class="slate button" id="1">1</button>
                 <button class="slate button" id="2">2</button>
                 <button class="slate button" id="3">3</button>
-                <button class="orange button" id="add">+</button>
+                <button class="orange operator button" id="+">+</button>
                 <button class="slate button" id="0">0</button>
                 <button class="slate button" id=".">.</button>
-                <button class="slate button" id="backspace">⌫</button>
-                <button class="orange button" id="equals">=</button>
+                <button class="slate special button" id="backspace">⌫</button>
+                <button class="orange special button" id="evaluate">=</button>
             </div>
         </div>
         <script src="script.js"></script>

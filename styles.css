@@ -1,3 +1,10 @@
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
@@ -8,7 +15,6 @@
     background-color: black;
     padding: 10px;
     padding-bottom: 50px;
-    font-family: FiraCode Nerd Font, sans-serif;
 }
 
 .display {
@@ -16,17 +22,40 @@
     flex-direction: column;
     flex: 5;
     color: white;
+    background-color: black;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.inner-display {
+    height: 90%;
+    width: 95%;
+    background-color: #55473A;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-
+    align-self: center;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
-.top-display {
+.current-display {
     font-size: 60px;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 15px;
 }
 
-.bottom-display {
-    font-size: 40px;
+.result-display {
+    font-size: 60px;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-right: 15px;
 }
 
 .buttons {
@@ -51,7 +80,6 @@
     padding-block: 0;
     padding-inline: 0;
     font-size: 40px;
-    font-family: inherit;
 }
 
 .grey {
@@ -69,6 +97,10 @@
     background-color: #343434;
 }
 
+.blinking-cursor {
+    margin-left: 2px;
+}
+
 .blinking-cursor::after {
     content: '|';
     color: #ffffff;
@@ -78,4 +110,8 @@
 @keyframes blink {
     0%, 100% {opacity: 0; }
     50% {opacity: 1; }
+}
+
+body {
+    visibility: hidden;
 }
