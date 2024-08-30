@@ -23,7 +23,7 @@ function updateDisplay() {
     currentDisplay.textContent = displayExpression;
     const maxDigits = 10;
 
-    const hasOperatorsOrParentheses = /[+\-*/()]/.test(currentExpression);
+    const hasOperatorsOrParentheses = /[%+\-*/()]/.test(currentExpression);
 
     if (hasOperatorsOrParentheses) {
         resultDisplay.textContent = resultExpression.toString().slice(0, maxDigits);
@@ -36,13 +36,15 @@ function validateInput(currentExpression, newInput) {
     const testExpression = currentExpression + newInput;
 
     const invalidPatterns = [
-        /^[+*/]|^-{2,}/, // Invalid leading symbols
+        /^[%+*/]|^-{2,}/, // Invalid leading symbols
         /[+*/]{2}|\-{3,}|[+*/\-]\-[+*/]/, //Invalid consecutive operators
         /-[+*/]/, // Invalid operators after subtract
         /[+*/]-{2,}/, // Invalid double subtract after other operator
         /(\d*\.\d*){2,}/, // Prevent multiple decimals in a number
         /\.[+*/-]/, // Prevent operator after a decimal
         /\([+*/]/, // Prevent invalid operators after opening parenthesis
+        /[+\-*/%]%/, //Prevent invalid operators before percentages
+
     ];
 
     for (let pattern of invalidPatterns) {
@@ -96,7 +98,8 @@ function evaluateExpression() {
         let processedExpression = currentExpression
         .replace(/(\d+|\))\(/g, '$1*(')
         .replace(/\)(\d+)/g, ')*$1')
-        .replace(/--/g, '+');
+        .replace(/--/g, '+')
+        .replace(/%/g, '*0.01');
 
         const openParenCount = (processedExpression.match(/\(/g) || []).length;
         const closeParenCount = (processedExpression.match(/\)/g) || []).length;
