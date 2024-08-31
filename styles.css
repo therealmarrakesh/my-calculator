@@ -127,7 +127,10 @@ body {
     body {
         background-color: black;
         margin: 0;
-        padding-bottom: 20px;
         overflow: hidden; /* Prevents scrolling */
+    }
+
+    .buttons {
+        padding-bottom: 20px;
     }
 }
