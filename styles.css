@@ -118,8 +118,8 @@ body {
 
 @media screen and (max-width: 600px) {
     .calculator {
-      width: 100vh;
-      height: 100%;
+      width: 100%;
+      height: 100vh;
       border-radius: 0;
       padding: 5px;
     }
